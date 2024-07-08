@@ -3,5 +3,11 @@
     "customSteps": "enter \"TestRigor\"\nenter enter\nCheck page contains \"testrigor.com\",
     "description": "Simple Search",
     "labels": ["testing"],
+  },
+  {
+    "testCaseUuid": "5c36fa05-726c-4ed3-be30-9c4d5b4dbf28",
+    "customSteps": "save expression \"2 * 2\" and save it as \"aaa\"\nCheck stored value \"aaa\" contains "4"",
+    "description": "Math Operations (Multiply, Addition, Substraction, Division)",
+    "labels": [],
   }
 ]
