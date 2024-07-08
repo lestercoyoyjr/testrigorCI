@@ -1,7 +1,7 @@
-customSteps: |
-  enter "TestRigor"
-  enter enter
-  Check page contains "testrigor.com"
-labels: []
-disabled: false
-applicationId: NihDdLMoqyeKutE3y
+"baselineMutations": [
+  {
+    "customSteps": "enter \"TestRigor\"\nenter enter\nCheck page contains \"testrigor.com\",
+    "description": "Simple Search",
+    "labels": ["testing"],
+  }
+]
