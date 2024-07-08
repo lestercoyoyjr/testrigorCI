@@ -1,0 +1,7 @@
+customSteps: |
+  enter "TestRigor"
+  enter enter
+  Check page contains "testrigor.com"
+labels: []
+disabled: false
+applicationId: NihDdLMoqyeKutE3y
