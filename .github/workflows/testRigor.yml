@@ -20,6 +20,27 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: convert test cases to json
+        id: convert_test_cases_to_json
+        run: |
+          # Path to the folder containing YAML files
+          yaml_folder="test_cases"
+          
+          # Initialize an empty JSON array
+          combined_json='{
+            "baselineMutations": []
+          }'
+          # Loop through each YAML file in the folder
+          for yaml_file in "$yaml_folder"/*.yaml; do
+             # Convert YAML to JSON using yq
+            json_content=$(yq eval -o=json "$yaml_file")
+          
+            # Add json_content to the array in the JSON object using jq
+            combined_json=$(jq --argjson content "$json_content" '.baselineMutations += [$content]' <<< "$combined_json")
+          done
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
