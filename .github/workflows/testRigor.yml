@@ -27,7 +27,7 @@ jobs:
         id: convert_test_cases_to_json
         run: |
           # Path to the folder containing YAML files
-          yaml_folder=".github/workflows"
+          yaml_folder="test-cases"
           
           # Initialize an empty JSON array
           combined_json='{
