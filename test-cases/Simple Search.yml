@@ -1,16 +1,21 @@
 {
-  "explicitMutations": true
+  "explicitMutations": true,
   "baselineMutations": [
     {
-      "customSteps": "enter \"TestRigor\"\nenter enter\nCheck page contains \"testrigor.com\",
+      "customSteps": "enter \"TestRigor\"\nenter enter\nCheck page contains \"testrigor.com\"",
       "description": "Simple Search",
-      "labels": ["testing"],
+      "labels": ["testing"]
     },
     {
       "testCaseUuid": "5c36fa05-726c-4ed3-be30-9c4d5b4dbf28",
-      "customSteps": "save expression \"2 * 2\" and save it as \"aaa\"\nCheck stored value \"aaa\" contains "4"",
-      "description": "Math Operations (Multiply, Addition, Substraction, Division)",
-      "labels": [],
+      "customSteps": "save expression \"2 * 2\" and save it as \"aaa\"\nCheck stored value \"aaa\" contains \"4\"",
+      "description": "Math Operations (Multiply, Addition, Subtraction, Division)",
+      "labels": []
     }
+    {
+      "customSteps": "enter \"TestRigor\"\nenter enter\nCheck page contains \"testrigor.com\"",
+      "description": "Simple Search-2",
+      "labels": ["testing"]
+    },
   ]
 }
