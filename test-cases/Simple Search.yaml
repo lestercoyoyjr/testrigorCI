@@ -1,4 +1,3 @@
-uuid: 5c36fa05-726c-4ed3-be30-9c4d5b4dbf28
 customSteps: |
   save expression "2 * 2" and save it as "aaaa"
   Check stored value "aa" contains "4"
