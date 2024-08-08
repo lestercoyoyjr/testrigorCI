@@ -31,30 +31,18 @@ jobs:
           
           # Initialize an empty JSON array
           combined_json='{
-            "baselineMutations": [
-              {
-                "customSteps": "enter \"TestRigor\"\nenter enter\nCheck page contains \"testrigor.com\"",
-                "description": "Simple Search",
-                "labels": ["testing"]
-              },
-              {
-                "testCaseUuid": "5c36fa05-726c-4ed3-be30-9c4d5b4dbf28",
-                "customSteps": "save expression \"2 * 2\" and save it as \"aaa\"\nCheck stored value \"aaa\" contains \"4\"",
-                "description": "Math Operations (Multiply, Addition, Subtraction, Division)",
-                "labels": []
-              }
-            ]
+            "baselineMutations": []
           }'
           # Loop through each YAML file in the folder
           for yaml_file in "$yaml_folder"/*.yaml; do
-            # Convert YAML to JSON using yq
+             # Convert YAML to JSON using yq
             json_content=$(yq eval -o=json "$yaml_file")
           
             # Add json_content to the array in the JSON object using jq
             combined_json=$(jq --argjson content "$json_content" '.baselineMutations += [$content]' <<< "$combined_json")
           done
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Make API call with cURL
         run: |
           curl -X POST \
             -H 'Content-type: application/json' \
