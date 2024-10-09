@@ -2,5 +2,3 @@ customSteps: |
   save expression "2 * 2" and save it as "aaaa"
   Check stored value "aa" contains "4"
 labels: []
-disabled: false
-applicationId: eiRFH5aYEDdSjrTku #Test case id
